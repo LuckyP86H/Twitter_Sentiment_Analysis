@@ -1,3 +1,8 @@
+'''
+Write a Python script happiest_state.py that returns the name of the happiest state as a string.
+
+'''
+
 import sys
 import json
 import operator
