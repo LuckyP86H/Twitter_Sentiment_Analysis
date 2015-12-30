@@ -1,11 +1,14 @@
+'''
+Write a Python script top_ten.py that computes the ten most frequently occurring hashtags from the data you gathered in Problem 1.
+
+'''
+
 import sys
 import json
 import operator
 
 def updating_frequency(text, frequency):
     for word in text:
-        #word = word.replace('\n', ' ')
-        #if word != " ":
         if word in frequency:
             frequency[word] += 1
         else:
@@ -21,15 +24,11 @@ def calculate_frequency(fp):
                 text = []
                 for tag in tweet['entities']['hashtags']:
                     text.append(tag['text'])
-                #print text
                 total += len(tweet['entities']['hashtags'])
                 updating_frequency(text, frequency)
-            #text = tweet['text']
-            #total += updating_frequency(text, frequency)
     final_frequency = sorted(frequency.items(), key = operator.itemgetter(1))
     final_frequency = final_frequency[::-1]
     for item in final_frequency[:10]:
-        #print key, float(value/total)
         print item[0], item[1]/total
         
 def main():
