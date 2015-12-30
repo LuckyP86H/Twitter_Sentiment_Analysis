@@ -1,3 +1,8 @@
+'''
+For this part, you will compute the sentiment of each tweet based on the sentiment scores of the terms in the tweet. The sentiment of a tweet is equivalent to the sum of the sentiment scores for each term in the tweet.
+
+'''
+
 import sys
 import json
 
@@ -38,7 +43,6 @@ def main():
     tweet_file = open(sys.argv[2])
     tweet_file2 = open(sys.argv[2])
     sentiments = create_sent_dictionary(sent_file2)
-    #hw()
     stream_sent(tweet_file2, sentiments)
    
 if __name__ == '__main__':
