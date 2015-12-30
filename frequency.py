@@ -1,3 +1,8 @@
+'''
+Write a Python script frequency.py to compute the term frequency histogram of the livestream data you harvested from Problem 1.
+
+'''
+
 import sys
 import json
 
@@ -22,11 +27,9 @@ def calculate_frequency(fp):
         if 'text' in tweet:
             text = tweet['text']
             total += updating_frequency(text, frequency)
-    #print total
     for key, value in frequency.iteritems():
         print key, float(value/total)
-        #print key.strip('\n'), float(float(frequency[key]) / float(total))#, float(frequency[key] / total)
-    #print total
+        
 
 def main():
     tweet_file = open(sys.argv[1])
